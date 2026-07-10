@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Job Hunters Grant</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="shortcut icon" type="image/png" href="img/logo.png">
+
+<!-- Open Graph Meta Tags for Link Preview -->
+<meta property="og:title" content="The Job Hunters Grant">
+<meta property="og:description" content="Unlock your career potential with The Job Hunters Grant. Apply for exclusive opportunities, gain access to premium job platforms, and grow your career with our curated grants program.">
+<meta property="og:image" content="img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Job Hunters Grant">
+<meta name="twitter:description" content="Unlock your career potential with The Job Hunters Grant.">
+<meta name="twitter:image" content="img/logo.png">
+
+<!-- Additional Meta -->
+<meta name="description" content="Apply for The Job Hunters Grant and unlock exclusive job opportunities. Find. Apply. Grow.">
+<meta name="theme-color" content="#0075FF">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0A2A5C 0%, #0f1929 25%, #051E3D 50%, #0f1929 75%, #0A2A5C 100%);
+    background-attachment: fixed;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Animated background elements */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 20% 50%, rgba(0, 117, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(100, 195, 247, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+    animation: pulse-bg 8s ease-in-out infinite;
+}
+
+@keyframes pulse-bg {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 500px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    animation: slide-in 0.8s ease-out;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-section img {
+    height: 60px;
+    width: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #0075FF 0%, #64C3F7 50%, #0075FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.5px;
+}
+
+.timer {
+    text-align: center;
+    font-weight: 600;
+    color: #0075FF;
+    margin: 20px 0;
+    padding: 12px;
+    background: rgba(0, 117, 255, 0.1);
+    border: 1px solid rgba(0, 117, 255, 0.3);
+    border-radius: 10px;
+    animation: glow-timer 2s ease-in-out infinite;
+}
+
+@keyframes glow-timer {
+    0%, 100% { box-shadow: 0 0 10px rgba(0, 117, 255, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(0, 117, 255, 0.5); }
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 117, 255, 0.3);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+    outline: none;
+    background: rgba(0, 117, 255, 0.1);
+    border-color: #0075FF;
+    box-shadow: 0 0 15px rgba(0, 117, 255, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.video-btn {
+    background: linear-gradient(135deg, #0075FF, #0099CC);
+    color: white;
+    box-shadow: 0 5px 20px rgba(0, 117, 255, 0.3);
+}
+
+.video-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 117, 255, 0.5);
+}
+
+.video-btn:active {
+    transform: translateY(0px);
+}
+
+button.submit-btn {
+    background: linear-gradient(135deg, #0075FF, #64C3F7);
+    color: white;
+    box-shadow: 0 5px 20px rgba(0, 117, 255, 0.3);
+}
+
+button.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 117, 255, 0.5);
+}
+
+button.submit-btn:active {
+    transform: translateY(0px);
+}
+
+.question-section {
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(0, 117, 255, 0.05);
+    border-left: 3px solid #0075FF;
+    border-radius: 10px;
+}
+
+.question-section p {
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+label:hover {
+    background: rgba(0, 117, 255, 0.1);
+    border-color: rgba(0, 117, 255, 0.3);
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+    margin-top: 0;
+    cursor: pointer;
+    accent-color: #0075FF;
+}
+
+.result {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    animation: result-appear 0.5s ease-out;
+}
+
+@keyframes result-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.result.success {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    color: #00ff88;
+}
+
+.result.error {
+    background: rgba(255, 100, 100, 0.1);
+    border: 1px solid rgba(255, 100, 100, 0.3);
+    color: #ff6464;
+}
+
+.code-display {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    padding: 15px;
+    background: rgba(0, 117, 255, 0.1);
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="container">
+        <div class="logo-section">
+            <img src="img/logo.png" alt="The Job Hunters Logo">
+            <h2>The Job Hunters Grant</h2>
+            <p style="font-size: 14px; color: rgba(255, 255, 255, 0.8); margin-top: 10px;">Eligibility & Selection Process</p>
+        </div>
+
+        <div class="timer" id="timer"></div>
+
+        <div class="grant-info" style="background: rgba(0, 117, 255, 0.08); padding: 15px; border-radius: 10px; margin-bottom: 20px; border-left: 3px solid #0075FF; text-align: center; font-size: 14px;">
+            <p><strong>🎁 10 Startups Selected</strong></p>
+            <p style="margin-top: 8px; font-size: 13px;">Each will receive <strong>₦500,000</strong> to grow their business</p>
+        </div>
+
+        <input type="text" id="name" placeholder="Full Name" autocomplete="name" required>
+        <input type="text" id="location" placeholder="Location" autocomplete="address-level1" required>
+
+        <button class="video-btn" onclick="watchVideo()">▶ Watch Video</button>
+
+        <div class="question-section">
+            <p><strong>🎯 Question:</strong><br>
+            Which platform was mentioned as a bonus?</p>
+
+            <div class="radio-group">
+                <label><input type="radio" name="answer" value="outlier ai"> OUTLIER AI</label>
+                <label><input type="radio" name="answer" value="scale ai"> SCALE AI</label>
+                <label><input type="radio" name="answer" value="micro1"> MICRO1</label>
+                <label><input type="radio" name="answer" value="dataforce"> DATAFORCE</label>
+                <label><input type="radio" name="answer" value="appen"> APPEN</label>
+                <label><input type="radio" name="answer" value="oneforma"> ONEFORMA</label>
+                <label><input type="radio" name="answer" value="prolific"> PROLIFIC</label>
+                <label><input type="radio" name="answer" value="consumer opportunity"> CONSUMER OPPORTUNITY</label>
+            </div>
+        </div>
+
+        <button class="submit-btn" onclick="submitForm()">✓ Submit Application</button>
+
+        <div class="result" id="result"></div>
+    </div>
+</div>
+
+<script>
+const correctAnswer = "consumer opportunity"; // CHANGE IF NEEDED
+const scriptURL = "YOUR_SCRIPT_URL_HERE";
+const maxSubmissions = 5;
+
+// Check submission count
+let submissionCount = parseInt(localStorage.getItem("submissionCount")) || 0;
+
+// Show completion page after 5 submissions
+if (submissionCount >= maxSubmissions) {
+    document.body.innerHTML = "<div style='display: flex; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(135deg, #0A2A5C 0%, #051E3D 50%, #0A2A5C 100%);'><div style='text-align: center; padding: 40px; background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.15);'><h2 style='color: #0075FF; font-size: 28px; margin-bottom: 20px;'>✓ Complete</h2><p style='color: #fff; font-size: 16px;'>You have already received your code.</p></div></div>";
+}
+
+// Timer (24 hours countdown)
+let countDownDate = new Date().getTime() + (24 * 60 * 60 * 1000);
+
+let timer = setInterval(function() {
+    let now = new Date().getTime();
+    let distance = countDownDate - now;
+
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000*60*60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000*60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerHTML =
+        "⏳ Application closes in: " + hours + "h " + minutes + "m " + seconds + "s";
+
+    if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("timer").innerHTML = "⏱️ Application Closed";
+    }
+}, 1000);
+
+function watchVideo() {
+    window.open("https://www.youtube.com/@TheJobHunters1", "_blank");
+}
+
+function getAnswer() {
+    let options = document.getElementsByName("answer");
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) return options[i].value.toLowerCase();
+    }
+    return null;
+}
+
+function generateCode() {
+    return "JOB-H-" + Math.random().toString(36).substring(2,8).toUpperCase();
+}
+
+function submitForm() {
+    let name = document.getElementById("name").value.trim();
+    let location = document.getElementById("location").value.trim();
+    let answer = getAnswer();
+    let result = document.getElementById("result");
+
+    if (!name || !location || !answer) {
+        result.classList.add("error");
+        result.classList.remove("success");
+        result.innerHTML = "⚠️ Please fill all fields and select an answer";
+        return;
+    }
+
+    if (answer !== correctAnswer) {
+        result.classList.add("error");
+        result.classList.remove("success");
+        result.innerHTML = "❌ Incorrect answer. Please try again or go back to the video to find out the right answer.";
+        return;
+    }
+
+    let code = generateCode();
+
+    // Save to Google Sheets
+    fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify({
+            name: name,
+            location: location,
+            code: code
+        })
+    }).catch(err => console.log("Sheet update status"));
+
+    // Increment submission count
+    submissionCount++;
+    localStorage.setItem("submissionCount", submissionCount);
+
+    result.classList.add("success");
+    result.classList.remove("error");
+    result.innerHTML = "✓ Success! Your Application Code:<div class='code-display'>" + code + "</div><p style='margin-top: 10px; font-size: 13px; opacity: 0.8;'>Use this code to begin your Pitch Deck in the comment section of the video as directed.</p>";
+}
+</script>
+
+</body>
+</html>
