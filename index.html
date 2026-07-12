@@ -212,6 +212,30 @@ button.submit-btn:active {
     transform: translateY(0px);
 }
 
+button.link-btn {
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    margin: 12px auto 0 auto;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 18px rgba(0, 117, 255, 0.2);
+}
+
+button.link-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+button.link-btn:active {
+    transform: translateY(0);
+}
+
 .question-section {
     margin: 25px 0;
     padding: 20px;
@@ -357,15 +381,7 @@ input[type="radio"] {
 <script>
 const correctAnswer = "consumer opportunity"; // CHANGE IF NEEDED
 const scriptURL = "YOUR_SCRIPT_URL_HERE";
-const maxSubmissions = 5;
-
-// Check submission count
-let submissionCount = parseInt(localStorage.getItem("submissionCount")) || 0;
-
-// Show completion page after 5 submissions
-if (submissionCount >= maxSubmissions) {
-    document.body.innerHTML = "<div style='display: flex; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(135deg, #0A2A5C 0%, #051E3D 50%, #0A2A5C 100%);'><div style='text-align: center; padding: 40px; background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.15);'><h2 style='color: #0075FF; font-size: 28px; margin-bottom: 20px;'>✓ Complete</h2><p style='color: #fff; font-size: 16px;'>You have already received your code.</p></div></div>";
-}
+// Submissions are unlimited; no localStorage tracking.
 
 // Timer (24 hours countdown)
 let countDownDate = new Date().getTime() + (24 * 60 * 60 * 1000);
@@ -388,7 +404,7 @@ let timer = setInterval(function() {
 }, 1000);
 
 function watchVideo() {
-    window.open("https://youtu.be/OmxpGNrsKS4", "_blank");
+    window.open("https://youtu.be/OmxpGNrsKS4?si=SnKH8tdR0Iuu5Hw1", "_blank");
 }
 
 function getAnswer() {
@@ -400,7 +416,7 @@ function getAnswer() {
 }
 
 function generateCode() {
-    return "JOB-H-" + Math.random().toString(36).substring(2,8).toUpperCase();
+    return "JH-" + Math.random().toString(36).substring(2,8).toUpperCase();
 }
 
 function submitForm() {
@@ -419,7 +435,7 @@ function submitForm() {
     if (answer !== correctAnswer) {
         result.classList.add("error");
         result.classList.remove("success");
-        result.innerHTML = "❌ Incorrect answer. Please try again or go back to the video to find out the right answer.";
+        result.innerHTML = "❌ Incorrect answer. Please try again.<br><button class='link-btn' onclick=\"window.location='instructions.html'\">Click here to find the right answer</button>";
         return;
     }
 
@@ -435,13 +451,11 @@ function submitForm() {
         })
     }).catch(err => console.log("Sheet update status"));
 
-    // Increment submission count
-    submissionCount++;
-    localStorage.setItem("submissionCount", submissionCount);
+    // Submission count not tracked (unlimited submissions)
 
     result.classList.add("success");
     result.classList.remove("error");
-    result.innerHTML = "✓ Success! Your Application Code:<div class='code-display'>" + code + "</div><p style='margin-top: 10px; font-size: 13px; opacity: 0.8;'>Use this code to begin your Pitch Deck in the comment section of the video as directed.</p>";
+    result.innerHTML = "✓ Success! Your Application Code:<div class='code-display'>" + code + "</div><p style='margin-top: 10px; font-size: 13px; opacity: 0.8;'>Use this code to begin your Pitch Deck in the comment section of the video as directed. To help your comment appear on YouTube, include your code in this format: <strong>My Application Code is " + code + "</strong></p>";
 }
 </script>
 
